@@ -1,5 +1,6 @@
 import IBreed from "../utils/IBreed";
-// import TopTen from "./TopTen";
+//import TopTen from "./TopTen";
+import TopThree from "./TopThree";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -24,5 +25,11 @@ export default function Leaderboard(props: LeaderboardProps): JSX.Element {
 
   console.log(props.breedList);
 
-  return <></>;
+  return (
+    <>
+      <div>
+        <TopThree breedList={props.breedList} />
+      </div>
+    </>
+  );
 }
