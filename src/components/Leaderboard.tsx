@@ -1,5 +1,5 @@
 import IBreed from "../utils/IBreed";
-//import TopTen from "./TopTen";
+import TopTen from "./TopTen";
 import TopThree from "./TopThree";
 import { useEffect } from "react";
 import axios from "axios";
@@ -29,6 +29,9 @@ export default function Leaderboard(props: LeaderboardProps): JSX.Element {
     <>
       <div>
         <TopThree breedList={props.breedList} />
+      </div>
+      <div>
+        <TopTen breedList={props.breedList} />
       </div>
     </>
   );
