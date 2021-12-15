@@ -1,6 +1,7 @@
 .image {
   display: inline-block;
-  width: 300px;
+  width: 100%;
+  vertical-align: text-bottom;
 }
 
 .container {
