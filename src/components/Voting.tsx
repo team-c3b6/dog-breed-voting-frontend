@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { retrieveBreedName } from "../utils/retrieveBreedName";
 import changeName from "../utils/changeName";
 import axios from "axios";
-
-const apiBaseURL = process.env.REACT_APP_API_BASE;
+import { APIbase } from "../utils/APIbase";
 
 export default function Voting(): JSX.Element {
   const [options, setOptions] = useState<string[]>([]);
@@ -22,7 +21,7 @@ export default function Voting(): JSX.Element {
 
   const handleVote = async (num: number) => {
     await axios
-      .post(apiBaseURL + "/breeds", {
+      .post(APIbase + "/breeds", {
         breed: retrieveBreedName(options[num]),
         image_url: options[num],
       })
