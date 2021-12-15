@@ -1,0 +1,9 @@
+.image {
+  display: inline-block;
+  width: 100%;
+  vertical-align: text-bottom;
+}
+
+.container {
+  text-align: center;
+}

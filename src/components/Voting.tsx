@@ -30,7 +30,7 @@ export default function Voting(): JSX.Element {
 
   return (
     <>
-      <img
+      {/* <img
         src={options[0]}
         alt={retrieveBreedName(options[0])}
         onClick={() => handleVote(0)}
@@ -43,7 +43,30 @@ export default function Voting(): JSX.Element {
         onClick={() => handleVote(1)}
         width="300"
       />
-      <p>{changeName(retrieveBreedName(options[1]))}</p>
+      <p>{changeName(retrieveBreedName(options[1]))}</p> */}
+
+      <div className="container" text-align="center">
+        <div className="row">
+          <div className="col-6">
+            <img
+              src={options[0]}
+              alt={retrieveBreedName(options[0])}
+              onClick={() => handleVote(0)}
+              height="500"
+            />
+            <p>{changeName(retrieveBreedName(options[0]))}</p>
+          </div>
+          <div className="col-6">
+            <img
+              src={options[1]}
+              alt={retrieveBreedName(options[1])}
+              onClick={() => handleVote(1)}
+              height="500"
+            />
+            <p>{changeName(retrieveBreedName(options[1]))}</p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
