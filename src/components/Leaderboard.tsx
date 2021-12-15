@@ -26,13 +26,25 @@ export default function Leaderboard(props: LeaderboardProps): JSX.Element {
   console.log(props.breedList);
 
   return (
-    <>
-      <div>
-        <TopThree breedList={props.breedList} />
+    // <>
+    //   <div>
+    //     <TopThree breedList={props.breedList} />
+    //   </div>
+    //   <div>
+    //     <TopTen breedList={props.breedList} />
+    //   </div>
+    // </>
+    <div className="container" text-align="center">
+      <div className="row">
+        <div className="col-9">
+          {" "}
+          <TopThree breedList={props.breedList} />
+        </div>
+        <div className="col-3">
+          {" "}
+          <TopTen breedList={props.breedList} />
+        </div>
       </div>
-      <div>
-        <TopTen breedList={props.breedList} />
-      </div>
-    </>
+    </div>
   );
 }
