@@ -11,6 +11,9 @@ export default function TopThree(props: TopThreeProps): JSX.Element {
 
   return (
     <div className="container" text-align="center">
+      <div className="p-3">
+        <h3 text-align="center">🏆🐾The Pawdium🐾🏆</h3>
+      </div>
       <div className="row">
         {topThree.map((e, index) => (
           <div key={e.id} className="col-3">

@@ -3,9 +3,14 @@ import { retrieveBreedName } from "../utils/retrieveBreedName";
 import changeName from "../utils/changeName";
 import axios from "axios";
 import { APIbase } from "../utils/APIbase";
+import { useSound } from "use-sound";
+import bark from "../sounds/bark.wav";
+import "./Voting.css";
 
 export default function Voting(): JSX.Element {
   const [options, setOptions] = useState<string[]>([]);
+
+  const [play] = useSound(bark);
 
   const handleLoadOptions = () => {
     fetch("https://dog.ceo/api/breeds/image/random/2")
@@ -20,6 +25,7 @@ export default function Voting(): JSX.Element {
   useEffect(handleLoadOptions, []);
 
   const handleVote = async (num: number) => {
+    play();
     await axios
       .post(APIbase + "/breeds", {
         breed: retrieveBreedName(options[num]),
@@ -30,25 +36,11 @@ export default function Voting(): JSX.Element {
 
   return (
     <>
-      {/* <img
-        src={options[0]}
-        alt={retrieveBreedName(options[0])}
-        onClick={() => handleVote(0)}
-        width="300"
-      />
-      <p>{changeName(retrieveBreedName(options[0]))}</p>
-      <img
-        src={options[1]}
-        alt={retrieveBreedName(options[0])}
-        onClick={() => handleVote(1)}
-        width="300"
-      />
-      <p>{changeName(retrieveBreedName(options[1]))}</p> */}
-
       <div className="container" text-align="center">
         <div className="row">
           <div className="col-6">
             <img
+              className="votingImg"
               src={options[0]}
               alt={retrieveBreedName(options[0])}
               onClick={() => handleVote(0)}
@@ -58,6 +50,7 @@ export default function Voting(): JSX.Element {
           </div>
           <div className="col-6">
             <img
+              className="votingImg"
               src={options[1]}
               alt={retrieveBreedName(options[1])}
               onClick={() => handleVote(1)}
