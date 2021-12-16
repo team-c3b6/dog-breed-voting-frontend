@@ -1,0 +1,7 @@
+.votingImg {
+  height: "500";
+}
+
+.votingImg:hover {
+  cursor: pointer;
+}
