@@ -2,6 +2,7 @@
   display: inline-block;
   width: 100%;
   vertical-align: text-bottom;
+  border-radius: 7px;
 }
 
 .container {
