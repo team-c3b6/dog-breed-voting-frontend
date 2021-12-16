@@ -3,9 +3,9 @@ import { retrieveBreedName } from "../utils/retrieveBreedName";
 import changeName from "../utils/changeName";
 import axios from "axios";
 import { APIbase } from "../utils/APIbase";
-import { useSound } from "use-sound"
-import bark from "../sounds/bark.wav"
-import "./Voting.css"
+import { useSound } from "use-sound";
+import bark from "../sounds/bark.wav";
+import "./Voting.css";
 
 export default function Voting(): JSX.Element {
   const [options, setOptions] = useState<string[]>([]);
@@ -25,7 +25,7 @@ export default function Voting(): JSX.Element {
   useEffect(handleLoadOptions, []);
 
   const handleVote = async (num: number) => {
-    play()
+    play();
     await axios
       .post(APIbase + "/breeds", {
         breed: retrieveBreedName(options[num]),

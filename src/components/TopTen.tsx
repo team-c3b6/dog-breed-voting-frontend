@@ -1,6 +1,6 @@
 import IBreed from "../utils/IBreed";
 import changeName from "../utils/changeName";
-import "./TopTen.css"
+import "./TopTen.css";
 
 interface TopTenProps {
   breedList: IBreed[];
@@ -17,9 +17,15 @@ export default function TopTen(props: TopTenProps): JSX.Element {
       <div className="table">
         <thead>
           <tr>
-            <th className="col w-15" scope="col">Rank</th>
-            <th className="col w-70" scope="col">Breed</th>
-            <th className="col w-15" scope="col">Votes</th>
+            <th className="col w-15" scope="col">
+              Rank
+            </th>
+            <th className="col w-70" scope="col">
+              Breed
+            </th>
+            <th className="col w-15" scope="col">
+              Votes
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +38,6 @@ export default function TopTen(props: TopTenProps): JSX.Element {
           ))}
         </tbody>
       </div>
-    </div >
+    </div>
   );
 }
