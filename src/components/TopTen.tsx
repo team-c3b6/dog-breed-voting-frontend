@@ -10,6 +10,9 @@ export default function TopTen(props: TopTenProps): JSX.Element {
 
   return (
     <div className="container" text-align="left">
+      <div className="p-3">
+        <h3>Top 10 breeds</h3>
+      </div>
       <div className="table">
         <div className="thead">
           <div className="trow">
